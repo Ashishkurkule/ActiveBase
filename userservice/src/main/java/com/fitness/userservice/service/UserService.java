@@ -52,4 +52,8 @@ public class UserService {
         return userResponse;
 
     }
+
+    public Boolean existByuserId(String userId) {
+        return userRepository.existsById(userId);
+    }
 }
