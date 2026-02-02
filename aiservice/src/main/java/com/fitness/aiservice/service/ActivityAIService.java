@@ -43,7 +43,7 @@ public class ActivityAIService {
                     .replaceAll("\\n```","")
                     .trim();
 
-//            log.info("RESPONSE FROM CLEANED AI {} ", jsonContent);
+
 
             JsonNode analysisJson = mapper.readTree(jsonContent);
             JsonNode analysisNode = analysisJson.path("analysis");
@@ -130,8 +130,6 @@ public class ActivityAIService {
 
     }
 
-    //    "overall": "This was an excellent"
-    // Overall: This was an excellent
     private void addAnalysisSection(StringBuilder fullAnalysis, JsonNode analysisNode, String key, String prefix) {
         if (!analysisNode.path(key).isMissingNode()){
             fullAnalysis.append(prefix)
